@@ -1,5 +1,6 @@
 # MChatHub
-<img style="border-radius=10px;" src="https://8upload.com/image/68db03b5406d2/IMG-20250929-WA0021.jpg"/>
+
+<img style="border-radius=20px; width=100%;" src="https://8upload.com/image/68db03b5406d2/IMG-20250929-WA0021.jpg"/>
 
 ---
 
