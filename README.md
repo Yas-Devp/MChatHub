@@ -6,5 +6,5 @@
 
 <h3>simple chatting website , it will released soon as possible , I'm still coding it ^_^</h3>
 
-(I stop coding one week before but I will complete and make it available for all to test it 'inshallah')
+<h4>(I stop coding one week before but I will complete and make it available for all to test it 'inshallah')</h4>
 ---
