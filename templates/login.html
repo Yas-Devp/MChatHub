@@ -24,7 +24,6 @@
         border-radius: 20px;
         box-shadow: 0px 8px rgb(173, 173, 173);
         padding: 30px;
-        
     }
     .container input{
         width: 80%;
@@ -59,10 +58,43 @@
     .login-btn:hover{
         background-color: black;
     }
+
+    .login-txt span{
+        display: inline-block;
+        transition: transform 0.6s;
+    }
+
+    .login-txt:hover span:nth-child(1){
+        transform: rotate(360deg);
+        transition-delay: 0s; 
+    }
+    .login-txt:hover span:nth-child(2){
+        transform: rotate(360deg);
+        transition-delay: 0.1s; 
+    }
+    .login-txt:hover span:nth-child(3){
+        transform: rotate(360deg);
+        transition-delay: 0.2s; 
+    }
+    .login-txt:hover span:nth-child(4){
+        transform: rotate(360deg);
+        transition-delay: 0.3s; 
+    }
+    .login-txt:hover span:nth-child(5){
+        transform: rotate(360deg);
+        transition-delay: 0.4s; 
+    }
+
 </style>
 <body>
     <div class="container">
-        <h1>Login</h1>
+        <h1 class="login-txt">
+            <span>L</span>
+            <span>o</span>
+            <span>g</span>
+            <span>i</span>
+            <span>n</span>
+        </h1>
         <form action="/login" method="post" class="form">
             <input type="text" name="email" id="cre" placeholder="username or email">
             <input type="password" name="pass" id="pass" placeholder="your password">
