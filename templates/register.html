@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MChatHub | Register</title>
+
+    <style>
+        body {
+            margin: 0px;
+            background-color: rgb(233, 233, 233);
+            align-content: center;
+            font-family: monospace;
+        }
+
+        .container {
+            margin: auto;
+            margin-top: 20px;
+            background-color: white;
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0px 8px rgb(173, 173, 173);
+            padding: 30px;
+        }
+
+        .container input {
+            width: 80%;
+            margin: 8px;
+            height: 30px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 12px;
+            color: rgb(128, 125, 125);
+            border: none;
+            border-radius: 15px;
+            background-color: rgb(232, 232, 233);
+        }
+
+        .container input:hover {
+            background-color: rgb(212, 212, 212);
+        }
+
+        .container a {
+            text-decoration: none;
+            color: green;
+        }
+
+        .container a:hover {
+            text-decoration: underline;
+        }
+
+        .register-btn {
+            margin-top: 5px;
+            height: 35px;
+            border-style: none;
+            border-radius: 15px;
+            width: 70%;
+        }
+
+        .register-btn:hover {
+            background-color: black;
+        }
+
+        .register-txt span {
+            display: inline-block;
+            transition: transform 0.6s;
+        }
+
+        .register-txt:hover span:nth-child(1) {
+            transform: rotate(360deg);
+            transition-delay: 0s;
+        }
+
+        .register-txt:hover span:nth-child(2) {
+            transform: rotate(360deg);
+            transition-delay: 0.1s;
+        }
+
+        .register-txt:hover span:nth-child(3) {
+            transform: rotate(360deg);
+            transition-delay: 0.2s;
+        }
+
+        .register-txt:hover span:nth-child(4) {
+            transform: rotate(360deg);
+            transition-delay: 0.3s;
+        }
+
+        .register-txt:hover span:nth-child(5) {
+            transform: rotate(360deg);
+            transition-delay: 0.4s;
+        }
+        .register-txt:hover span:nth-child(6) {
+            transform: rotate(360deg);
+            transition-delay: 0.5s;
+        }
+        .register-txt:hover span:nth-child(7) {
+            transform: rotate(360deg);
+            transition-delay: 0.6s;
+        }
+        .register-txt:hover span:nth-child(8) {
+            transform: rotate(360deg);
+            transition-delay: 0.7s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="register-txt">
+            <span>R</span>
+            <span>e</span>
+            <span>g</span>
+            <span>i</span>
+            <span>s</span>
+            <span>t</span>
+            <span>e</span>
+            <span>r</span>
+        </h1>
+        <form action="/register" method="post" class="form">
+            <input type="text" name="username" id="username" placeholder="your username">
+            <input type="text" name="email" id="email" placeholder="your email">
+            <input type="password" name="pass" id="pass" placeholder="your password">
+
+            <button class="register-btn">- Create Account -</button>
+            <br>
+            <br>
+            <a href="login.html">
+                you have already an account , <br />login now
+            </a>
+        </form>
+    </div>
+</body>
+
+<!--This website created by yasdevp from zero , open source doesn't mean you can make it yours , mention my name every where you use it-->
+
+</html>
