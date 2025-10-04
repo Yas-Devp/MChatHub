@@ -7,18 +7,27 @@
     <title>MChatHub | Login</title>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
         body {
             margin: 0px;
             background-color: rgb(233, 233, 233);
             align-content: center;
-            font-family: monospace;
+            font-family: 'Raleway', sans-serif;
         }
-
+        *{
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
         .container {
             margin: auto;
             margin-top: 20px;
             background-color: white;
             width: 70%;
+            max-width: 450px;
             display: flex;
             flex-direction: column;
             text-align: center;
@@ -28,6 +37,7 @@
         }
 
         .container input {
+            font-family: 'Poppins', sans-serif;
             width: 80%;
             margin: 8px;
             height: 30px;
@@ -54,6 +64,7 @@
         }
 
         .login-btn {
+            font-family: 'Poppins', sans-serif;
             margin-top: 5px;
             height: 35px;
             border-style: none;
@@ -118,6 +129,8 @@
             </a>
         </form>
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 <!--This website created by yasdevp from zero , open source doesn't mean you can make it yours , mention my name every where you use it-->
