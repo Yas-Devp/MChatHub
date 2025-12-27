@@ -106,7 +106,7 @@ app.post("/register", async (req, res) => {
 //initialize the server with specified PORT
 app.listen(port, ()=>{
 	console.log(`Server running on ${port}`)
-	mongoose.connect('mongodb+srv://yasprodev_db_user:MBaRmYaGJZXinW4Y@cluster0.i6bbvbp.mongodb.net/?appName=Cluster0', {
+	mongoose.connect('mongodb+srv://<db_user>:<password>@cluster0.i6bbvbp.mongodb.net/?appName=Cluster0', {
     	useNewUrlParser: true,
     	useUnifiedTopology: true
 	})
