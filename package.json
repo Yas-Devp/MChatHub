@@ -1,0 +1,27 @@
+{
+  "name": "mchathub",
+  "version": "1.0.0",
+  "description": "<img style=\"border-radius=20px; width=100%;\" src=\"https://8upload.com/image/68db03b5406d2/IMG-20250929-WA0021.jpg\"/>",
+  "main": "index.js",
+  "scripts": {
+    "start": "node templates/index.js",
+    "dev": "nodemon templates/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yas-Devp/MChatHub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yas-Devp/MChatHub/issues"
+  },
+  "homepage": "https://github.com/Yas-Devp/MChatHub#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongodb": "^6.3.0",
+    "mongoose": "^6.13.8"
+  }
+}

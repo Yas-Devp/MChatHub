@@ -135,14 +135,14 @@
             <span>r</span>
         </h1>
         <form action="/register" method="post" class="form">
-            <input type="text" name="username" id="username" placeholder="your username">
-            <input type="text" name="email" id="email" placeholder="your email">
-            <input type="password" name="pass" id="pass" placeholder="your password">
+            <input type="text" name="username" id="username" placeholder="your username" minlength="4" required>
+            <input type="text" name="email" id="email" placeholder="your email" required>
+            <input type="password" name="pass" id="pass" placeholder="your password" minlength="8" required>
 
-            <button class="register-btn">- Create Account -</button>
+            <button type="submit" class="register-btn">- Create Account -</button>
             <br>
             <br>
-            <a href="login.html">
+            <a href="/login">
                 you have already an account , <br />login now
             </a>
         </form>
