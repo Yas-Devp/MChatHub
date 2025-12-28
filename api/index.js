@@ -1,4 +1,4 @@
-//modules
+//Modules
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
@@ -117,7 +117,7 @@ app.get('/', (req, res) =>{
     res.redirect('/login');
 })
 
-//initialize the server with specified PORT
+//Initialize the server with specified PORT
 /*
 app.listen(port, ()=>{
 	console.log(`Server running on ${port}`)
@@ -130,5 +130,5 @@ app.listen(port, ()=>{
 })
 */
 
-//export for vercel
+//Export for vercel
 module.exports = app;
