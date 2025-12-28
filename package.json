@@ -4,8 +4,8 @@
   "description": "<img style=\"border-radius=20px; width=100%;\" src=\"https://8upload.com/image/68db03b5406d2/IMG-20250929-WA0021.jpg\"/>",
   "main": "index.js",
   "scripts": {
-    "start": "node templates/index.js",
-    "dev": "nodemon templates/index.js"
+    "start": "node api/index.js",
+    "dev": "nodemon test_server.js"
   },
   "repository": {
     "type": "git",

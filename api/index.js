@@ -1,6 +1,13 @@
+//modules
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const mongoose = require('mongoose');
+
+
+//Variables
+const loginHtml = fs.readFileSync(path.join(__dirname, '../public/login.html'), 'utf-8');
+const registerHtml = fs.readFileSync(path.join(__dirname, '../public/register.html'), 'utf-8');
 
 //App setup && Middlewares
 const app = express();
@@ -30,11 +37,11 @@ app.get('/test', (req, res)=> {
 })
 
 app.get("/login", (req, res) => {
-	res.sendFile(path.join(__dirname, './', 'login.html'));
+	res.send(loginHtml);
 });
 
 app.get("/register", (req, res) => {
-	res.sendFile(path.join(__dirname, './', 'register.html'));
+	res.send(registerHtml);
 });
 
 app.post("/register", async (req, res) => {
@@ -61,7 +68,7 @@ app.post("/register", async (req, res) => {
             </script>
         `);
     }
-
+    /*
 	try {
         const newUser = new User({
             username: username,
@@ -100,10 +107,18 @@ app.post("/register", async (req, res) => {
             </script>
         `);
     }
+    */
+
+    res.send(req.body);
 });
 
 
+app.get('/', (req, res) =>{
+    res.redirect('/login');
+})
+
 //initialize the server with specified PORT
+/*
 app.listen(port, ()=>{
 	console.log(`Server running on ${port}`)
 	mongoose.connect('mongodb+srv://yasprodev_db_user:MBaRmYaGJZXinW4Y@cluster0.i6bbvbp.mongodb.net/?appName=Cluster0', {
@@ -113,3 +128,7 @@ app.listen(port, ()=>{
 	.then(() => console.log('MongoDB Connected'))
 	.catch(err => console.log('MongoDB Connection Error:', err))
 })
+*/
+
+//export for vercel
+module.exports = app;
