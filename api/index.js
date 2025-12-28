@@ -6,8 +6,8 @@ const mongoose = require('mongoose');
 
 
 //Variables
-const loginHtml = fs.readFileSync(path.join(__dirname, '../public/login.html'), 'utf-8');
-const registerHtml = fs.readFileSync(path.join(__dirname, '../public/register.html'), 'utf-8');
+const loginHtml = fs.readFileSync(path.join(__dirname, '../templates/login.html'), 'utf-8');
+const registerHtml = fs.readFileSync(path.join(__dirname, '../templates/register.html'), 'utf-8');
 
 //App setup && Middlewares
 const app = express();
