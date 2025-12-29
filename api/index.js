@@ -12,7 +12,7 @@ const indexHtml = fs.readFileSync(path.join(__dirname, '../templates/index.html'
 //App setup && Middlewares
 const app = express();
 const port = 3000
-app.use(express.static(path.join(__dirname, './')));
+app.use(express.static(path.join(__dirname, '../templates')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 mongoose.set('strictQuery', false);
