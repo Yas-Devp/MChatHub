@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 //Variables
 const loginHtml = fs.readFileSync(path.join(__dirname, '../templates/login.html'), 'utf-8');
 const registerHtml = fs.readFileSync(path.join(__dirname, '../templates/register.html'), 'utf-8');
-
+const indexHtml = fs.readFileSync(path.join(__dirname, '../templates/index.html'), 'utf-8');
 //App setup && Middlewares
 const app = express();
 const port = 3000
@@ -114,7 +114,7 @@ app.post("/register", async (req, res) => {
 
 
 app.get('/', (req, res) =>{
-    res.redirect('/login');
+    res.send(indexHtml);
 })
 
 //Initialize the server with specified PORT
