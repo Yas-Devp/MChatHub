@@ -20,7 +20,25 @@ body{
 
 .container h2{
     text-align: center;
+    text-decoration: underline;
+}
+
+.container h3{
+    background-color: #fff;
+    padding: 10px;
+    border-radius : 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.container ul{
+    margin-top: 50px;
+    list-style-type: square;
+
 }
 .container ul li{
-    font-size: 2rem;
+    font-size: 1rem;
+}
+
+.container ul li:hover{
+    cursor: pointer;
+    text-decoration: dashed;
 }
