@@ -119,8 +119,8 @@
             <span>n</span>
         </h1>
         <form action="/login" method="post" class="form">
-            <input type="text" name="email" id="cre" placeholder="username or email">
-            <input type="password" name="pass" id="pass" placeholder="your password">
+            <input type="text" name="email" id="cre" placeholder="username or email" required>
+            <input type="password" name="pass" id="pass" placeholder="your password" minlength="8" required>
 
             <button class="login-btn">- Login -</button>
             <br>

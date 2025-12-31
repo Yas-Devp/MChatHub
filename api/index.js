@@ -44,6 +44,33 @@ app.get("/register", (req, res) => {
 	res.send(registerHtml);
 });
 
+
+app.post('/login', (req,res) =>{
+
+    const email = req.body.email;
+    const password = req.body.pass;
+
+    if (password.length < 8) {
+        return res.send(`
+            <script>
+                alert('Password too short!');
+                window.location.href = '/login'; 
+            </script>
+        `);
+    }
+
+    if (!email.includes('@')){
+        return res.send(`
+            <script>
+                alert('Email must contain @!');
+                window.location.href = '/login'; 
+            </script>
+        `);
+    }
+
+    res.send(req.body);
+});
+
 app.post("/register", async (req, res) => {
 	
 	// Data
