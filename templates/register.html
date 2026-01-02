@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MChatHub | Register</title>
+    <script src="https://kit.fontawesome.com/ca3244dd5f.js" crossorogin="anonymous"></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap');
@@ -49,6 +50,20 @@
             border-radius: 15px;
             background-color: rgb(232, 232, 233);
         }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper i {
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #777;
+        }
+
 
         .container input:hover {
             background-color: rgb(212, 212, 212);
@@ -143,7 +158,11 @@
 
             <input type="email" name="email" id="email" placeholder="your email" required>
 
-            <input type="password" name="pass" id="pass" placeholder="your password" minlength="8" required>hello</input>
+            <div class="password-wrapper">
+                <input type="password" name="pass" id="pass" placeholder="your password" minlength="8" required>
+                <i class="fas fa-eye" id="togglePassword"></i>
+            </div>
+
 
             
             <button type="submit" class="register-btn">- Create Account -</button>
@@ -159,12 +178,22 @@
         </form>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        const toggle = document.getElementById("togglePassword");
+        const password = document.getElementById("pass");
+
+        toggle.addEventListener("click", () => {
+            const type = password.type === "password" ? "text" : "password";
+            password.type = type;
+            toggle.classList.toggle("fa-eye-slash");
+        });
+    </script>
+
 </body>
 
 <!--This website created by Yas-Devp[https://github.com/Yas-Devp] from zero
 
-CopyRights 2024-2025
+CopyRights 2024-2026
 -->
 
 </html>

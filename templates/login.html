@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MChatHub | Login</title>
+    <script src="https://kit.fontawesome.com/ca3244dd5f.js" crossorogin="anonymous"></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap');
@@ -16,12 +17,14 @@
             align-content: center;
             font-family: 'Raleway', sans-serif;
         }
+
         *{
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
         }
+
         .container {
             margin: auto;
             margin-top: 20px;
@@ -48,6 +51,19 @@
             border: none;
             border-radius: 15px;
             background-color: rgb(232, 232, 233);
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper i {
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #777;
         }
 
         .container input:hover {
@@ -120,7 +136,10 @@
         </h1>
         <form action="/login" method="post" class="form">
             <input type="text" name="email" id="cre" placeholder="username or email" required>
-            <input type="password" name="pass" id="pass" placeholder="your password" minlength="8" required>
+            <div class="password-wrapper">
+                <input type="password" name="pass" id="pass" placeholder="your password" minlength="8" required>
+                <i class="fas fa-eye" id="togglePassword"></i>
+            </div>
 
             <button class="login-btn">- Login -</button>
             <br>
@@ -135,7 +154,16 @@
         </form>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        const toggle = document.getElementById("togglePassword");
+        const password = document.getElementById("pass");
+
+        toggle.addEventListener("click", () => {
+            const type = password.type === "password" ? "text" : "password";
+            password.type = type;
+            toggle.classList.toggle("fa-eye-slash");
+        });
+    </script>
 </body>
 
 <!--This website created by yasdevp from zero , open source doesn't mean you can make it yours , mention my name every where you use it-->

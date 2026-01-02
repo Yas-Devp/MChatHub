@@ -13,6 +13,10 @@ const indexHtml = fs.readFileSync(
   path.join(__dirname, '../../templates/index.html'),
   'utf-8'
 );
+const accountHtml = fs.readFileSync(
+  path.join(__dirname, '../../templates/test_account.html'),
+  'utf-8'
+);
 
 exports.home = (req, res) => {
   res.send(indexHtml);
@@ -24,4 +28,8 @@ exports.loginPage = (req, res) => {
 
 exports.registerPage = (req, res) => {
   res.send(registerHtml);
+};
+
+exports.accountTest = (req, res)=>{
+  res.send(accountHtml);
 };
