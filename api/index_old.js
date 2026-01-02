@@ -1,0 +1,161 @@
+//Modules
+const express = require('express');
+const path = require('path');
+const fs = require('fs');
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+
+//Variables
+const loginHtml = fs.readFileSync(path.join(__dirname, '../templates/login.html'), 'utf-8');
+const registerHtml = fs.readFileSync(path.join(__dirname, '../templates/register.html'), 'utf-8');
+const indexHtml = fs.readFileSync(path.join(__dirname, '../templates/index.html'), 'utf-8');
+
+//App setup && Middlewares
+const app = express();
+const port = 3000
+
+app.use(express.static(path.join(__dirname, '../templates')));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+mongoose.set('strictQuery', false);
+
+mongoose.connect(process.env.MONGODB_URI)
+    .then(() => console.log('MongoDB Connected'))
+    .catch(err => console.log('MongoDB Connection Error:', err))
+
+const userSchema = new mongoose.Schema({
+    username: String,
+    email: String,
+    password: String,
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
+});
+
+const User = mongoose.model('User', userSchema);
+
+
+app.get('/test', (req, res)=> {
+    res.send('<h3>WebSite is Waked Up !!</h3>');
+})
+
+app.get("/login", (req, res) => {
+	res.send(loginHtml);
+});
+
+app.get("/register", (req, res) => {
+	res.send(registerHtml);
+});
+
+
+app.post('/login', (req,res) =>{
+
+    const email = req.body.email;
+    const password = req.body.pass;
+
+    if (password.length < 8) {
+        return res.send(`
+            <script>
+                alert('Password too short!');
+                window.location.href = '/login'; 
+            </script>
+        `);
+    }
+
+    if (!email.includes('@')){
+        return res.send(`
+            <script>
+                alert('Email must contain @!');
+                window.location.href = '/login'; 
+            </script>
+        `);
+    }
+
+    res.send(req.body);
+});
+
+app.post("/register", async (req, res) => {
+	
+	// Data
+	const username = req.body.username;
+	const email = req.body.email;
+	const password = req.body.pass;
+
+	if (password.length < 8) {
+        return res.send(`
+            <script>
+                alert('Password too short!');
+                window.location.href = '/register'; 
+            </script>
+        `);
+    }
+
+    if (!email.includes('@')){
+    	return res.send(`
+            <script>
+                alert('Email must contain @!');
+                window.location.href = '/register'; 
+            </script>
+        `);
+    }
+
+	try {
+        const newUser = new User({
+            username: username,
+            email: email,
+            password: password  // Note: In production, hash passwords!
+        });
+
+        await newUser.save();  // Save to database
+        
+        // Success response
+        res.send(`
+            <script>
+                alert('Registration successful!');
+                window.location.href = '/login'; 
+            </script>
+        `);
+        
+    } catch (error) {
+        console.error('Database error:', error);
+        
+        // Handle duplicate email error
+        if (error.code === 11000) {
+            return res.send(`
+                <script>
+                    alert('Email already exists!');
+                    window.location.href = '/register'; 
+                </script>
+            `);
+        }
+        
+        // Generic error
+        res.send(`
+            <script>
+                alert('Registration failed. Please try again.');
+                window.location.href = '/register'; 
+            </script>
+        `);
+    }
+
+
+    //res.send(req.body);
+});
+
+
+app.get('/', (req, res) =>{
+    res.send(indexHtml);
+})
+
+//Initialize the server with specified PORT
+/*
+app.listen(port, ()=>{
+	console.log(`Server running on ${port}`)
+	
+})
+*/
+
+//Export for vercel
+module.exports = app;

@@ -58,6 +58,9 @@
             text-decoration: none;
             color: green;
         }
+        .container p {
+            color: #000;
+        }
 
         .container a:hover {
             text-decoration: underline;
@@ -135,22 +138,33 @@
             <span>r</span>
         </h1>
         <form action="/register" method="post" class="form">
-            <input type="text" name="username" id="username" placeholder="your username" minlength="4" required>
-            <input type="text" name="email" id="email" placeholder="your email" required>
-            <input type="password" name="pass" id="pass" placeholder="your password" minlength="8" required>
 
+            <input type="text" name="username" id="username" placeholder="your username" minlength="4" required>
+
+            <input type="email" name="email" id="email" placeholder="your email" required>
+
+            <input type="password" name="pass" id="pass" placeholder="your password" minlength="8" required>hello</input>
+
+            
             <button type="submit" class="register-btn">- Create Account -</button>
             <br>
             <br>
-            <a href="/login">
-                you have already an account , <br />login now
-            </a>
+            <p>
+                you have already an account , 
+                <a href="/login">
+                    login now
+                </a>
+            </p>
+            
         </form>
     </div>
 
     <script src="script.js"></script>
 </body>
 
-<!--This website created by yasdevp from zero , open source doesn't mean you can make it yours , mention my name every where you use it-->
+<!--This website created by Yas-Devp[https://github.com/Yas-Devp] from zero
+
+CopyRights 2024-2025
+-->
 
 </html>
